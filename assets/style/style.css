@@ -1,0 +1,277 @@
+/* === RESET & GLOBAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; text-align: center; margin-bottom: 40px; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.1rem; color: #555; }
+
+/* === UTILITY CLASSES === */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #32c85a; /* Warna hijau dari desain */
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #2aaa4c;
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #555;
+}
+
+/* === 1. HEADER === */
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo {
+    width: 25%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* === 2. HERO SECTION === */
+.hero {
+    padding: 60px 0;
+    background-color: black;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1; /* Mengambil sisa ruang */
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.hero-image {
+    flex-basis: 40%; /* Lebar spesifik 40% */
+}
+.hero-logo {
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+
+/* === 3. OUR PROJECT SECTION === */
+.projects {
+    padding: 60px 0;
+    background-color: #fff; /* Sesuai desain */
+}
+
+.project-grid {
+    display: flex;
+    justify-content: center; /* Pusatkan kartu */
+    gap: 30px;
+}
+
+.project-card {
+    flex-basis: 48%; /* Sekitar setengah lebar */
+    max-width: 500px;
+}
+
+.project-card img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* === 4. INSIGHT SECTION === */
+.insight {
+    padding: 60px 0;
+    background-color: #111; /* Latar belakang gelap */
+    color: #f4f4f4;
+}
+
+.insight h2 {
+    color: #fff;
+}
+
+.insight-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.insight-image {
+    flex: 1;
+}
+.insight-image img {
+    border-radius: 8px;
+}
+
+.insight-text {
+    flex: 1;
+}
+
+.insight-text h3 {
+    margin-bottom: 20px;
+}
+
+.insight-text h4 {
+    color: #32c85a; /* Warna hijau aksen */
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.insight-text p {
+    color: #ccc;
+}
+
+/* Kelas 'reverse' untuk membalik urutan flex */
+.insight-item.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* === 5. CTA (CALL TO ACTION) SECTION === */
+.cta {
+    padding: 80px 0;
+    /* Dummy background image */
+    background-image: url('../img/Rectangle-7.svg');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Diperlukan untuk overlay */
+}
+
+/* Lapisan overlay gelap agar teks mudah dibaca */
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.cta-container {
+    position: relative; /* Agar konten tampil di atas overlay */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta h2 {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+/* === 6. FOOTER === */
+footer {
+    padding: 30px 0;
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+}
+
+/* === RESPONSIVE SEDERHANA === */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    /* Navigasi Stack */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Hero Stack */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        flex-basis: auto; /* Reset basis */
+    }
+
+    /* Project Stack */
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Insight Stack */
+    .insight-item,
+    .insight-item.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+}
