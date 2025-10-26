@@ -109,6 +109,24 @@ header {
     font-weight: 800;
 }
 
+.navbar ul {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: #000000;
+    background-color: #ffffff;
+}
+
 .hero {
     padding: 60px 0;
     background-color: black;
@@ -203,6 +221,14 @@ ct .project-card {
     color: #ccc;
 }
 
+.insight-text li {
+    margin-bottom: 5px;
+}
+
+.insight-text ol {
+    padding-left: 25px;
+    margin-top: 5px;
+}
 .cta {
     padding: 80px 0;
     background-image: url('../img/Rectangle-7.svg');
