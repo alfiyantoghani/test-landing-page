@@ -15,7 +15,7 @@
 
     <header>
         <div class="container nav-container">
-            <img src="./assets/img/Frame 4.svg" alt="" class="logo">
+            <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/Frame 4.svg" alt="" class="logo">
             <nav class="navbar">
                 <ul>
                     <li><a href="#hero">Home</a></li>
@@ -32,12 +32,12 @@
         <section id="hero" class="hero">
             <div class="container hero-container">
                 <div class="hero-text">
-                    <img src="./assets/img/Frame 4.svg" alt="" class="hero-logo">
+                    <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/Frame 4.svg" alt="" class="hero-logo">
                     <p>Mengubah Ide Kompleks Menjadi Produk yang Tepat Sasaran, Dirancang Untuk Memikat Audiens Dan
                         Mencapai Target Bisnis Anda.</p>
                 </div>
                 <div class="hero-image">
-                    <img src="./assets/img/LooperGroup.svg" alt="Grafis Abstrak">
+                    <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/LooperGroup.svg" alt="Grafis Abstrak">
                 </div>
             </div>
         </section>
@@ -47,12 +47,12 @@
                 <h2>Our Project</h2>
                 <div class="project-grid">
                     <div class="project-card">
-                        <img src="./assets/img/mockup X Shop.svg" alt="X Shop Mobile Apps">
+                        <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/mockup X Shop.svg" alt="X Shop Mobile Apps">
                         <h3>X Shop Mobile Apps</h3>
                         <p>Mengurangi Limbah Makanan Dengan Konsep "Mystery Bag"</p>
                     </div>
                     <div class="project-card">
-                        <img src="./assets/img/mockup naplife.svg" alt="Naplife Website">
+                        <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/mockup naplife.svg" alt="Naplife Website">
                         <h3>Naplife Website</h3>
                         <p>Meningkatkan Kepercayaan Pasien Melalui Transparansi Digital</p>
                     </div>
@@ -65,7 +65,7 @@
                 <h2>Insight</h2>
                 <div class="insight-item">
                     <div class="insight-image">
-                        <img src="./assets/img/mockup X Shop.svg" alt="Detail X Shop">
+                        <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/mockup X Shop.svg" alt="Detail X Shop">
                     </div>
                     <div class="insight-text">
                         <h3>X Shop Mobile Apps</h3>
@@ -101,7 +101,7 @@
                         untuk kembali menggunakan website bahkan setelah sesi konsultasi selesai.</p>
                     </div>
                     <div class="insight-image">
-                        <img src="./assets/img/mockup naplife.svg" alt="Detail Naplife">
+                        <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/mockup naplife.svg" alt="Detail Naplife">
                     </div>
                 </div>
             </div>
@@ -112,11 +112,35 @@
                 <h2>Mulai Proyek Anda Bersama Kami</h2>
                 <p>Ceritakan tentang ide Anda. Klik ikon di bawah untuk terhubung langsung dengan saya via WhatsApp.</p>
                 <a href="#" class="btn btn-primary"> WhatsApp
-                    <img src="./assets/img/WA.svg" alt="">
+                    <img src="https://alfiyantoghani.github.io/test-landing-page/assets/img/WA.svg" alt="">
                 </a>
             </div>
         </section>
     </main>
 </body>
 
+<script>
+    const header = document.querySelector('header');
+    let scrollTimer; // Variabel untuk menampung timer
+
+    window.addEventListener('scroll', () => {
+        // 1. Setiap kali scroll, HAPUS timer yang sedang berjalan
+        clearTimeout(scrollTimer);
+
+        // 2. TAMPILKAN navbar (tidak peduli arah scroll)
+        header.classList.remove('navbar-hidden');
+
+        // 3. Cek apakah kita di paling atas
+        if (window.scrollY <= 0) {
+            // Jika di atas, biarkan navbar tampil dan JANGAN buat timer baru
+            return;
+        }
+
+        // 4. Jika TIDAK di atas, buat timer BARU untuk menyembunyikan navbar
+        // Timer akan berjalan 1.5 detik SETELAH scroll terakhir berhenti
+        scrollTimer = setTimeout(() => {
+            header.classList.add('navbar-hidden');
+        }, 1500); // 1500ms = 1.5 detik. Anda bisa ubah angka ini
+    });
+</script>
 </html>
